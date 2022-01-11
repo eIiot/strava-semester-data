@@ -16,10 +16,8 @@ const exchangeCode = async (code) => {
       grant_type: 'authorization_code',
     },
   ).catch((err) => {
-    console.log(err);
     return new Error('Error exchanging code for access token');
   });
-  console.log(response.data);
   return response.data;
 };
 
@@ -33,10 +31,8 @@ const getActivities = async (accessToken) => {
       },
     },
   ).catch((err) => {
-    console.log(err);
     return new Error('Error getting activities');
   });
-  console.log(response.data);
   return response.data;
 };
 
@@ -91,7 +87,6 @@ express()
   .get('/success', (req, res) => {
     res.sendFile(__dirname + '/success.html');
   })
-  .listen(80, () => {
-    console.log('listening on port 80');
-    console.log('login with Strava: https://www.strava.com/oauth/authorize?client_id=67430&response_type=code&redirect_uri=http://localhost&approval_prompt=force&scope=activity:read_all')
+  .listen(1258, () => {
+    console.log('listening on port 1258');
   });
