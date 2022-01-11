@@ -59,7 +59,7 @@ express()
             var feet = meters_climb * 3.28084;
 
             // redirect to ./sucess
-            res.redirect(`./success?miles=${miles}&hours=${hours}&feet=${feet}`);
+            res.redirect(`https://strava.bhs.sh/success?miles=${miles}&hours=${hours}&feet=${feet}`);
             
             const anonData = JSON.parse(fs.readFileSync('data.json'));
 
