@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success!</title>
+  <link rel="stylesheet" type="text/css" href="./tailwind.css">
+</head>
+<body>
+  <div id="container" class="flex flex-col align-center justify-center h-screen text-center m-3">
+    <h2 class="font-bold">Thanks for helping make PE more accessible to everyone!</h2>
+    <h3 class="font-semibold">This semester, you've ridden:</h3>
+    <ul>
+      <li>
+        <span id="miles" class="text-gray-600">
+        </span>
+        miles
+      </li>
+      <li>
+        <span id="feet" class="text-gray-600">
+        </span>
+        feet
+      </li>
+      <li>
+        <span id="hours" class="text-gray-600">
+        </span>
+        hours
+      </li>
+    </ul>
+    <p>Don't forget to <a class="text-blue-500" href="https://www.strava.com/settings/apps">remove this app from your Strava</a></p>
+  </div>
+</body>
+<script>
+  const params = new URLSearchParams(document.location.search);
+
+  document.getElementById("miles").innerHTML = parseFloat(params.get("miles")).toFixed(2);
+  document.getElementById("feet").innerHTML = parseFloat(params.get("feet")).toFixed(2);
+  document.getElementById("hours").innerHTML = parseFloat(params.get("hours")).toFixed(2);
+</script>
+</html>
