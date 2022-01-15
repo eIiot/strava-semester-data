@@ -24,7 +24,7 @@ const exchangeCode = async (code) => {
 // get athlete activites
 const getActivities = async (accessToken) => {
   const response = await axios.get(
-    'https://www.strava.com/api/v3/athlete/activities?after=1629097201&per_page=200', // after in unix timestamp, per_page should just be large enough to get all activities
+    'https://www.strava.com/api/v3/athlete/activities?after=1629097201?before=1631883599&per_page=200', // after in unix timestamp, per_page should just be large enough to get all activities
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,
